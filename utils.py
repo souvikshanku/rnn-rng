@@ -69,7 +69,7 @@ def generate_random_number():
             logits = lstm.forward(inp)
 
         probs = torch.exp(logits).detach().numpy().reshape(-1, 29)
-        # use random samepling to generate random numbers 😅♻️
+        # use random sampling to generate random numbers 😅♻️
         out = np.random.choice(len(probs[-1]), p=probs[-1])
 
         chars += VOCAB_OPP[out]
